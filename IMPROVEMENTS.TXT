@@ -1,0 +1,18 @@
+Challenges in Your Current Approach:
+Parking Space Detection:
+The system detects occupied or unoccupied spaces based on manually drawn boxes. It doesn't automatically detect parking spaces from the image. That's why you have to click on each space manually.
+Cars in Motion:
+As you mentioned, the system can’t distinguish between parked cars and moving cars on the road because the detection is based only on pixel differences in the image. It will mark any car within the bounding box as "parked" even if it's moving.
+Real vs. Non-parking Area Detection:
+The code doesn't differentiate between actual parking lots and roads. It only checks the predefined boxes (by mouse clicks). So, if you define a box on the road by mistake, it will still count moving cars in that box.
+Improving the System:
+Automatic Parking Lot Detection:
+
+You could add a feature to automatically detect parking spaces using computer vision techniques, so you don’t have to manually click on each space.
+Car Motion Detection:
+
+To improve accuracy and only count parked cars, you can use background subtraction to detect moving cars and ignore them.
+Alternatively, you could use object tracking algorithms (e.g., optical flow, or motion vectors) to ensure that only stationary cars are detected.
+Model-Based Approach:
+
+For more advanced detection, you could train a deep learning model (like YOLO or Faster R-CNN) to automatically detect both parking spots and cars. This way, the system would be much more accurate in detecting both empty and occupied parking spaces, while also ignoring cars that are in motion.
