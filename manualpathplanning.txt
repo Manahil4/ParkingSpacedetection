@@ -1,0 +1,33 @@
+The **Backward A* planning algorithm using motion primitives** in the context of **autonomous vehicle parking** is a crucial step in **motion planning**, but it doesn't directly handle **parking space detection**. However, it contributes to **safe and efficient parking maneuvers** once a parking space has been detected. Here's how it fits into the bigger picture and how it can help:
+
+### **1. Parking Space Detection vs. Motion Planning**:
+- **Parking Space Detection**: This involves identifying and verifying whether a parking spot is empty, often using sensors, cameras, or AI models. This process is done before motion planning.
+- **Motion Planning**: Once the parking space is detected, the vehicle needs to plan and execute the maneuver to park safely in the available space. This is where the **Backward A* algorithm** and **motion primitives** come into play.
+
+### **2. Backward A* Planning Algorithm**:
+- **A* Algorithm**: A* is a popular search algorithm that finds the shortest path from a start to a goal location. In the context of parking, it helps find an optimal path for the vehicle to maneuver into the parking spot.
+- **Backward A***: Instead of searching from the vehicle's current position to the parking spot, **Backward A*** starts from the goal (parking space) and works backward to the current position. This can often result in more efficient paths when planning in reverse for parking.
+  
+### **3. Motion Primitives**:
+- **Motion Primitives** are pre-defined basic motions (like forward, backward, turning) that the vehicle can use to construct complex maneuvers, such as parking. The planner uses these primitives to build a sequence of motions that will guide the car into the parking space.
+  
+### **4. 2D Dijkstra's Heuristic**:
+- **Dijkstra’s Algorithm** is similar to A* but without the heuristic function, focusing only on the shortest path. In your case, a **2D Dijkstra's heuristic** is used to guide the A* search in continuous space, making it more efficient and goal-directed.
+- This heuristic helps reduce unnecessary paths and ensures that the vehicle follows a feasible trajectory while parking.
+
+### **5. Map Design in Unreal Engine and Carla Simulator**:
+- **Unreal Engine 4.22 and Carla 0.9.6** provide a high-fidelity simulation environment where realistic urban or parking environments can be designed.
+- These maps and environments are used to test and validate motion planning algorithms in dynamic scenarios, making sure the vehicle can handle parking in various conditions (e.g., narrow spaces, complex layouts).
+
+### **How It Helps in Parking**:
+1. **Accurate Maneuver Planning**: Once a parking space is detected, the Backward A* algorithm helps the vehicle calculate an optimal and collision-free path into the parking space, accounting for constraints like the vehicle's turning radius.
+  
+2. **Efficient Parking Execution**: Motion primitives help ensure the vehicle follows a smooth and efficient path, combining small predefined motions to safely park without complex computations in real-time.
+
+3. **Continuous Space Handling**: Instead of limiting the car to a grid (discrete space), the algorithm works in a **continuous space**, meaning the car can handle more flexible and real-world paths, like curved parking maneuvers.
+
+### **How It Helps You**:
+- If you're working on **autonomous parking**, this kind of motion planning is essential for enabling the vehicle to park itself efficiently after detecting a parking space.
+- By combining **parking space detection** (done via sensors or camera) with **motion planning algorithms like Backward A***, you ensure that the vehicle not only identifies empty spots but also parks safely in them.
+
+If you're designing or simulating parking behavior, combining parking space detection with such motion planning algorithms allows you to cover both **detection** and **execution** aspects of the parking process.
