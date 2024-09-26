@@ -1,0 +1,4 @@
+https://docs.ultralytics.com/guides/parking-management/#how-can-i-define-parking-spaces-using-ultralytics-yolov8
+https://docs.ultralytics.com/guides/instance-segmentation-and-tracking/#what-is-instance-segmentation
+https://docs.ultralytics.com/guides/object-counting/#what-is-object-counting
+https://docs.ultralytics.com/solutions/
